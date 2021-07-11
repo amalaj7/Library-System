@@ -34,10 +34,10 @@ def userChoice():
         print('\n')
         out = mongoOperation.SearchbyAuthor(option)
         print('These are the books with the Same Author ')
-        for i in range(len(out)):
-            j = out[i]
+        for idx,j in enumerate(out):
+            
             print('--------------------------------------')
-            print(i+1 ,",","Book Name : {fname}, Publisher : {pub}, Genre : {gen}".format(fname = j['Title'], pub = j['Publishers'], gen = j['Genre'])) 
+            print(idx+1 ,",","Book Name : {fname}, Publisher : {pub}, Genre : {gen}".format(fname = j['Title'], pub = j['Publishers'], gen = j['Genre'])) 
 
     elif choice == 3:
 
@@ -49,11 +49,11 @@ def userChoice():
         out = mongoOperation.SearchbyGenre(option)
         print('These are the books with the Same Genres/Tags')
         
-        for i in range(len(out)):
-            j = out[i]
+        for idx,j in enumerate(out):
+            
             print('--------------------------------------')
             
-            print(i+1 ,",", "Book Name : {fname}, Author : {aname}, Publisher : {pub}".format(fname = j["Title"], aname = j["AuthorName"], pub = j['Publishers'])) 
+            print(idx+1 ,",", "Book Name : {fname}, Author : {aname}, Publisher : {pub}".format(fname = j["Title"], aname = j["AuthorName"], pub = j['Publishers'])) 
 
     else:
         op1 =input("Enter the Key Name: ")
